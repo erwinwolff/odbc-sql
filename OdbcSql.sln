@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OdbcSql", "OdbcSql\OdbcSql.vcxproj", "{EAA57297-C93E-4D48-A29B-DFC01F516342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{31CDC9E1-8039-4337-A362-E0D54116E32A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		ArmRelease|Any CPU = ArmRelease|Any CPU
+		ArmRelease|ARM = ArmRelease|ARM
+		ArmRelease|Mixed Platforms = ArmRelease|Mixed Platforms
+		ArmRelease|Win32 = ArmRelease|Win32
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.ArmRelease|Any CPU.ActiveCfg = ArmRelease|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.ArmRelease|ARM.ActiveCfg = ArmRelease|ARM
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.ArmRelease|ARM.Build.0 = ArmRelease|ARM
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.ArmRelease|Mixed Platforms.ActiveCfg = ArmRelease|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.ArmRelease|Mixed Platforms.Build.0 = ArmRelease|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.ArmRelease|Mixed Platforms.Deploy.0 = ArmRelease|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.ArmRelease|Win32.ActiveCfg = ArmRelease|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.ArmRelease|Win32.Build.0 = ArmRelease|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.ArmRelease|Win32.Deploy.0 = ArmRelease|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Debug|ARM.ActiveCfg = Debug|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Debug|ARM.Build.0 = Debug|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Debug|Mixed Platforms.Deploy.0 = Debug|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Debug|Win32.Build.0 = Debug|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Debug|Win32.Deploy.0 = Debug|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Release|Any CPU.ActiveCfg = Release|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Release|ARM.ActiveCfg = Release|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Release|ARM.Build.0 = Release|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Release|Mixed Platforms.Deploy.0 = Release|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Release|Win32.ActiveCfg = Release|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Release|Win32.Build.0 = Release|Win32
+		{EAA57297-C93E-4D48-A29B-DFC01F516342}.Release|Win32.Deploy.0 = Release|Win32
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.ArmRelease|Any CPU.ActiveCfg = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.ArmRelease|Any CPU.Build.0 = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.ArmRelease|ARM.ActiveCfg = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.ArmRelease|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.ArmRelease|Mixed Platforms.Build.0 = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.ArmRelease|Win32.ActiveCfg = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Release|ARM.ActiveCfg = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{31CDC9E1-8039-4337-A362-E0D54116E32A}.Release|Win32.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal
