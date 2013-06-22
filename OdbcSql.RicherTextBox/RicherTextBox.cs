@@ -22,7 +22,7 @@ namespace OdbcSql.RicherTextBox
 
         public RicherTextBox()
             : base()
-        {      
+        {
             //--
         }
 
@@ -456,6 +456,21 @@ namespace OdbcSql.RicherTextBox
         };
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
+        public new void AppendText(string text)
+        {
+            text = text.Replace("\r", string.Empty);
+            text = text.Replace("\n", "\\par");
+
+            text = text.Replace("\t", "\\tab");
+
+            this.AppendRtf(text);
+        }
+
+
+        /// <summary>
         /// Adds rtf formatted code
         /// </summary>
         /// <param name="rtf">Valid(!!) RTF code</param>
@@ -466,13 +481,14 @@ namespace OdbcSql.RicherTextBox
                 rtf += @"\par";
             }
 
+
             string contents = this.Rtf;
             int last = contents.LastIndexOf(@"\par");
             contents = contents.Insert(last - 1, rtf);
 
             this.Rtf = contents;
-        }        
-      
+        }
+
         /// <summary>
         /// Do some syntax highlightning
         /// </summary>
@@ -480,10 +496,13 @@ namespace OdbcSql.RicherTextBox
         /// <returns>RTF formatted SQL code</returns>
         public string HighlightSQL(string sql)
         {
-            List<string> keywords = sql.Split(" ".ToCharArray()).ToList();
+            sql = sql.Replace("\r", string.Empty);
+            sql = sql.Replace("\n", string.Empty);
+
+            string[] keywords = sql.Split(" ".ToCharArray());
             string result = string.Empty;
 
-            for (int i = 0; i < keywords.Count; i++)
+            for (int i = 0; i < keywords.Length; i++)
             {
                 if (_sqlKeywords.Contains(keywords[i].ToLower()))
                 {

@@ -356,6 +356,7 @@ namespace OdbcSql {
 	private: System::Void clearToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 				 this->textBoxResult->Text = System::String::Empty;
 				 this->textBoxQuery->Text = System::String::Empty;
+				 this->textBoxResult->initRicherTextbox();
 			 }
 
 	private: System::Void formMain_Resize(System::Object^  sender, System::EventArgs^  e) {
@@ -383,13 +384,16 @@ namespace OdbcSql {
 
 	private : System::Void executeQuery(System::String ^ query)
 			  {
-				  textBoxResult->Text += "\nODBC >> " + query + "\n";
+
+				  String ^ addedLine = this->textBoxResult->HighlightSQL(" ODBC >> " + query + "\n");
+				  
+				  this->textBoxResult->AppendRtf(addedLine);
 
 				  if(HelperFunctions::cleanString(query) == "@@drivers") 
 				  {
 					  OdbcSystemQueries * OdbcSystemQueries = new OdbcSql::OdbcSystemQueries();
 
-					  textBoxResult->Text += OdbcSystemQueries->GetDrivers();
+					  this->textBoxResult->AppendText(OdbcSystemQueries->GetDrivers());
 
 					  delete OdbcSystemQueries;
 				  }
@@ -398,7 +402,7 @@ namespace OdbcSql {
 				  {
 					  OdbcSystemQueries * OdbcSystemQueries = new OdbcSql::OdbcSystemQueries();
 
-					  textBoxResult->Text += OdbcSystemQueries->GetDSN();
+					  this->textBoxResult->AppendText(OdbcSystemQueries->GetDSN());
 
 					  delete OdbcSystemQueries;
 				  }
@@ -414,6 +418,7 @@ namespace OdbcSql {
 				 fillDSNList();
 
 				 this->odbcActions = new OdbcActions();
+				 this->textBoxResult->initRicherTextbox();
 			 }
 
 	private: System::Void textBoxQuery_KeyUp(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
