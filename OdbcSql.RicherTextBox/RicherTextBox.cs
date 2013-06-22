@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +19,25 @@ namespace OdbcSql.RicherTextBox
     /// </summary>
     public class RicherTextBox : RichTextBox
     {
+
         public RicherTextBox()
             : base()
-        {
-            this.ReservedKeywordColor = Color.Blue;
+        {      
+            //--
         }
 
-        public Color ReservedKeywordColor { get; set; }
+        public void initRicherTextbox()
+        {
+            string colortable = @"{\rtf1\ansi{\colortbl;\red0\green0\blue255;} \cf1 \n\n\par}";
+            this.Rtf = colortable;
+        }
+
+
+        private List<string> _systemKeywords = new List<string>()
+        {
+            "@@dsn",
+            "@@drivers"
+        };
 
         /// <summary>
         /// All SQL and ODBC reserved keywords
@@ -445,46 +458,60 @@ namespace OdbcSql.RicherTextBox
         /// <summary>
         /// Adds rtf formatted code
         /// </summary>
-        /// <param name="rtf">Rtf code</param>
-        /// <param name="position">Position in text</param>
-        public void AppendRtf(string rtf, int position)
-        {
-            DataObject datobj = new DataObject();
-
-            datobj.SetData(DataFormats.Rtf, rtf);
-            Clipboard.SetDataObject(datobj);
-
-            this.SelectionStart = position;
-            this.Paste();
-
-        }
-
-        /// <summary>
-        /// Adds rtf formatted code
-        /// </summary>
-        /// <param name="rtf">Rtf code</param>
+        /// <param name="rtf">Valid(!!) RTF code</param>
         public void AppendRtf(string rtf)
         {
-            this.AppendRtf(rtf, this.TextLength);
-        }
+            if (!rtf.EndsWith(@"\par"))
+            {
+                rtf += @"\par";
+            }
 
+            string contents = this.Rtf;
+            int last = contents.LastIndexOf(@"\par");
+            contents = contents.Insert(last - 1, rtf);
 
-        public void AppendSQL(string sql, int position)
+            this.Rtf = contents;
+        }        
+      
+        /// <summary>
+        /// Do some syntax highlightning
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <returns>RTF formatted SQL code</returns>
+        public string HighlightSQL(string sql)
         {
             List<string> keywords = sql.Split(" ".ToCharArray()).ToList();
             string result = string.Empty;
 
-            foreach (var item in keywords)
+            for (int i = 0; i < keywords.Count; i++)
             {
-                if (_sqlKeywords.Contains(item.ToLower()))
+                if (_sqlKeywords.Contains(keywords[i].ToLower()))
                 {
-
+                    keywords[i] = @"\cf1" + keywords[i] + @" \cf0";
                 }
             }
 
             result = string.Join(" ", keywords.ToArray());
-
-            this.AppendRtf(result, position);
+            return result;
         }
+
+        //public string HighlightSystemKeywords(string systemKeyword)
+        //{
+        //    List<string> keywords = systemKeyword.Split(" ".ToCharArray()).ToList();
+        //    string result = string.Empty;
+
+        //    for (int i = 0; i < keywords.Count; i++)
+        //    {
+        //        if (_systemKeywords.Contains(keywords[i].ToLower()))
+        //        {
+        //            keywords[i] = @"\cf2" + keywords[i] + @" \cf0";
+        //        }
+        //    }
+
+        //    result = string.Join(" ", keywords.ToArray());
+        //    return result;
+        //}
+
+
     }
 }

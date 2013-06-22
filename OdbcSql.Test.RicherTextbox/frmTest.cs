@@ -16,5 +16,22 @@ namespace OdbcSql.Test.RicherTextbox
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.richerTextBox.AppendRtf(this.richerTextBox.HighlightSQL(("SELECT * FROM TABLE\r\n")));
+        }
+
+        private void frmTest_Load(object sender, EventArgs e)
+        {
+            this.richerTextBox.initRicherTextbox();
+            this.richerTextBox.AppendRtf(this.richerTextBox.HighlightSQL(("SELECT * FROM TABLE\r\n")));
+            //this.richerTextBox.AppendRtf(this.richerTextBox.HighlightSystemKeywords(("@@dsn")));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //this.richerTextBox.AppendRtf(this.richerTextBox.HighlightSystemKeywords(("@@dsn")));
+        }
     }
 }
