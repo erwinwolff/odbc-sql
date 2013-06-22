@@ -12,6 +12,8 @@ namespace OdbcSql {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+	using namespace OdbcSql::RicherTextBox;
+
 
 	/// <summary>
 	/// Summary for formMain
@@ -52,7 +54,7 @@ namespace OdbcSql {
 	private: System::Windows::Forms::TextBox^  textBoxQuery;
 	private: System::Windows::Forms::ToolStripMenuItem^  clearToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripButton^  toolStripConnect;
-	private: System::Windows::Forms::RichTextBox^  textBoxResult;
+	private: OdbcSql::RicherTextBox::RicherTextBox^  textBoxResult;
 	private: System::Windows::Forms::SplitContainer^  splitContainer;
 	private: System::Windows::Forms::ToolStripMenuItem^  odbcToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  showToolStripMenuItem;
@@ -105,7 +107,7 @@ namespace OdbcSql {
 			this->toolStripConnect = (gcnew System::Windows::Forms::ToolStripButton());
 			this->toolStripClose = (gcnew System::Windows::Forms::ToolStripButton());
 			this->textBoxQuery = (gcnew System::Windows::Forms::TextBox());
-			this->textBoxResult = (gcnew System::Windows::Forms::RichTextBox());
+			this->textBoxResult = (gcnew OdbcSql::RicherTextBox::RicherTextBox());
 			this->splitContainer = (gcnew System::Windows::Forms::SplitContainer());
 			this->menuStrip1->SuspendLayout();
 			this->toolStrip1->SuspendLayout();

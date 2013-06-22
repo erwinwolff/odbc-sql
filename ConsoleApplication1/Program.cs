@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Newtonsoft.Json;
+//using Newtonsoft.Json;
 
 namespace ConsoleApplication1
 {
@@ -40,7 +40,7 @@ namespace ConsoleApplication1
                     }
                 }
 
-             
+
 
             }
             return result;
@@ -48,7 +48,7 @@ namespace ConsoleApplication1
 
         static string JsonSerializer(Dictionary<int, List<string>> list)
         {
-            string result = JsonConvert.SerializeObject(list);
+            string result = string.Empty;
 
             return result;
         }
@@ -82,7 +82,7 @@ namespace ConsoleApplication1
                 entries.Add(i, newrow2);
             }
 
-           // Console.Write(JsonSerializer(entries));
+            // Console.Write(JsonSerializer(entries));
             Console.Write(TableSerializer(entries));
             Console.ReadKey();
         }
