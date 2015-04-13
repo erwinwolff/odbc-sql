@@ -1,0 +1,1 @@
+A small open source application to just do SQL queries on an ODBC datasource written in C++. The application is still in pre-alpha stage, so please don't download it ... yet, if you are in need of a useful program.
